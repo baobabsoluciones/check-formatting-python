@@ -37,10 +37,10 @@ jobs:
       - uses: your-username/black-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          python-version: '3.x'        # optional, default is '3.x'
-          black-version: '23.12.0'     # optional, default is '23.12.0'
-          black-args: '--check --verbose'  # optional, default is '--check --verbose'
-          paths: 'src tests'           # optional, default is '.'
+          python-version: '3.x'        # optional, default is '3.x' which uses latest Python 3 stable version
+          black-version: 'latest'      # optional, default is 'latest'
+          black-args: '--check'        # optional, default is '--check'
+          paths: 'src tests'           # optional, default is '.', As space-separated paths
           fail-on-error: 'true'        # optional, default is 'true'
           comment-mode: 'replace'      # optional, default is 'replace'
 ```
