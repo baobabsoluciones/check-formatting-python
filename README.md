@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: your-username/black-action@v1
+      - uses: baobabsoluciones/check-formatting-python@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           python-version: '3.x'        # optional, default is '3.x' which uses latest Python 3 stable version
@@ -61,14 +61,14 @@ jobs:
 
 ### Check specific directories
 ```yaml
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     paths: 'src tests scripts'
 ```
 
 ### Format check without failing
 ```yaml
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     fail-on-error: 'false'
 ```
@@ -76,17 +76,17 @@ jobs:
 ### Different comment modes
 ```yaml
 # Replace existing comments (default)
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'replace'
 
 # Append new comments
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'append'
 
 # No comments
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'none'
 ```
