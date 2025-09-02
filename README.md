@@ -34,13 +34,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: your-username/black-action@v1
+      - uses: baobabsoluciones/check-formatting-python@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          python-version: '3.x'        # optional, default is '3.x'
-          black-version: '23.12.0'     # optional, default is '23.12.0'
-          black-args: '--check --verbose'  # optional, default is '--check --verbose'
-          paths: 'src tests'           # optional, default is '.'
+          python-version: '3.x'        # optional, default is '3.x' which uses latest Python 3 stable version
+          black-version: 'latest'      # optional, default is 'latest'
+          black-args: '--check'        # optional, default is '--check'
+          paths: 'src tests'           # optional, default is '.', As space-separated paths
           fail-on-error: 'true'        # optional, default is 'true'
           comment-mode: 'replace'      # optional, default is 'replace'
 ```
@@ -61,14 +61,14 @@ jobs:
 
 ### Check specific directories
 ```yaml
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     paths: 'src tests scripts'
 ```
 
 ### Format check without failing
 ```yaml
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     fail-on-error: 'false'
 ```
@@ -76,17 +76,17 @@ jobs:
 ### Different comment modes
 ```yaml
 # Replace existing comments (default)
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'replace'
 
 # Append new comments
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'append'
 
 # No comments
-- uses: your-username/black-action@v1
+- uses: baobabsoluciones/check-formatting-python@v1
   with:
     comment-mode: 'none'
 ```
